@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dz</title>
+</head>
+
+<body>
+    <script>
+        var basc = [['smth1', 1, 2],
+        ['smth2', 2, 3],
+        ['smth3', 4, 5]
+        ];
+        var price = 0;
+        function priceOfBask(arr) {
+            arr.forEach(element => {
+                price += element[2]
+            });
+        }
+        priceOfBask(basc);
+        alert(price);
+    </script>
+</body>
+
+</html>
