@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Basket {
+            constructor(name) {
+                this.name = name;
+                this.content = []
+                this.totalPrice = 0
+            }
+
+            addProduct(pName, price) {
+                this.content.push({
+                    product: pName,
+                    price: price,
+                });
+            }
+            countBasketPrice() {
+                for (var i = 0; i < this.content.length; i++) {
+                    this.totalPrice += this.content[i].price;
+                }
+            }
+        }
+
+        var a = new Basket('MyBasket');
+        a.addProduct('smth1', 10);
+        a.addProduct('smth2', 10);
+        a.countBasketPrice();
+        alert(a.totalPrice)
+    </script>
+</body>
+
+</html>
