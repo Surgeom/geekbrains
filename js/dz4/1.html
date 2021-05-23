@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var digit = {
+            number: 0,
+            units: 0,
+            tens: 0,
+            hundreds: 0,
+            toString() {
+                return 'число состоит из сотен - ' + this.hundreds + ' десятков - ' + this.tens + ' едениц -' + this.units
+            }
+        };
+        var num = +prompt('Введите число от 0 до 999')
+        if (num < 999 && num > 0) {
+            digit.units = Math.floor(num % 10);
+            digit.tens = Math.floor(num / 10 % 10);
+            digit.hundreds = Math.floor(num / 100 % 10);
+            alert(digit);
+        } else {
+            alert('неправильный ввод');
+        }
+
+
+    </script>
+</body>
+
+</html>
