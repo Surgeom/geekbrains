@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dz5</title>
+</head>
+
+<body>
+    <script>
+        var table = document.createElement("table");
+        table.style = "border-style : solid";
+        var par = 'width : 40px; height : 40px; background-color :'
+        var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+        for (var i = 0; i <= 8; i++) {
+            var tr = document.createElement('tr');
+            for (var j = 0; j <= 8; j++) {
+                var td = document.createElement('td');
+                if (j === 0) {
+                    if (i == 8) {
+                        tr.appendChild(td);
+                    } else {
+                        td.textContent = 8 - i;
+                        tr.appendChild(td);
+                    }
+                    continue;
+                }
+                if (i === 8) {
+                    td.textContent = letters[j - 1];
+                    tr.appendChild(td);
+                    continue;
+                }
+                if (i % 2 == j % 2) {
+                    td.style = `${par} white`;
+
+                } else {
+                    td.style = `${par} black`;
+                }
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.body.appendChild(table);
+    </script>
+</body>
+
+</html>

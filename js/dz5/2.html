@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dz5</title>
+</head>
+
+<body>
+    <div id="basket"></div>
+    <script>
+        class Basket {
+            constructor(name) {
+                this.name = name;
+                this.content = []
+                this.totalPrice = 0
+            }
+
+            addProduct(pName, price) {
+                this.content.push({
+                    product: pName,
+                    price: price,
+                });
+            }
+            countBasketPrice() {
+                for (var i = 0; i < this.content.length; i++) {
+                    this.totalPrice += this.content[i].price;
+                }
+            }
+        }
+
+        var a = new Basket('MyBasket');
+        a.addProduct('smth1', 10);
+        let bas = document.getElementById('basket')
+        bas.style = ' width: 750px;height: 423px;margin: 80px auto;background: black;display:flex'
+        function isEmpty() {
+
+            if (a.content.length == 0) {
+                alert('корзина пуста')
+            }
+            else {
+                a.countBasketPrice()
+                alert(`В корзине: ${a.content.length} товаров на сумму ${a.totalPrice} рублей`)
+            }
+        }
+        bas.onclick = isEmpty;
+    </script>
+
+</body>
+
+
+
+</html>
